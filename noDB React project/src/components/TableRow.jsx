@@ -22,7 +22,7 @@ export default function TableRow({ initialInventoryData, initialIsEditing, delet
             quantity: quantity,
             notes: notes
         }
-        axios.put(`/invoice/update/${initialInventoryData.id}`, bodyObj)
+        axios.put(`/inventory/update/${initialInventoryData.id}`, bodyObj)
         .then((res) => {
             setEditMode(false)
         })

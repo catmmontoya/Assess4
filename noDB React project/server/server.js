@@ -17,7 +17,7 @@ app.post("/inventory/add", handlerFunctions.addRow);
 
 app.delete("/inventory/delete/:id", handlerFunctions.deleteItem);
 
-app.put("/inventory/update/:id");
+app.put("/inventory/update/:id", handlerFunctions.updateItem);
 
 viteExpress.listen(app, 8888, () => {
   console.log("we are livin th good life at http://localhost:8888");

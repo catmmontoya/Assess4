@@ -68,6 +68,17 @@ const handlerFunctions = {
     const index = data.findIndex((inventoryItem) => {
       return inventoryItem.id === +id;
     });
+    const inventoryToUpdate = data[index];
+
+    inventoryToUpdate.item = item;
+    inventoryToUpdate.description = description;
+    inventoryToUpdate.quantity = +quantity;
+    inventoryToUpdate.notes = notes;
+
+    res.send({
+      message: "Updated Item",
+      updatedItem: inventoryToUpdate,
+    });
   },
 };
 

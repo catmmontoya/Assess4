@@ -10,17 +10,20 @@ let globalId = 4;
 
 export default function InventoryTable({ initialData, initialInventoryList }) {
 
-    // const [inventoryList, setInventoryList] = useState(initialInventoryList)
+    const [inventoryList, setInventoryList] = useState(initialInventoryList)
     const [currentData, setCurrentData] = useState(initialData)
 
-    const addRow = async () => {
-
-        const response = await axios.post("/inventory/add", {
+    const addRow = () => {
+        axios.post("/inventory/add", {
             description: "Enter description here"
         })
-        setCurrentData([...currentData, response.data.newItem ])
-
-        }
+        .then((res) => {
+            setCurrentData([...currentData, res.data.newItem])
+        })
+        .catch(error => {
+            console.error("Error adding row", error)
+        })
+    }
 
      const deleteRow = (id) => {
     axios.delete(`/inventory/delete/${id}`)
