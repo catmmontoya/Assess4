@@ -6,7 +6,7 @@ import TableRow from "./TableRow"
 import { useState } from 'react'
 import axios from "axios"
 
-let globalId = 4;
+// let globalId = 4;
 
 export default function InventoryTable({ initialData, initialInventoryList }) {
 
@@ -20,9 +20,9 @@ export default function InventoryTable({ initialData, initialInventoryList }) {
         .then((res) => {
             setCurrentData([...currentData, res.data.newItem])
         })
-        .catch(error => {
-            console.error("Error adding row", error)
-        })
+        // .catch(error => {
+        //     console.error("Error adding row", error)
+        // })
     }
 
      const deleteRow = (id) => {
@@ -34,7 +34,7 @@ export default function InventoryTable({ initialData, initialInventoryList }) {
         })
         setCurrentData(filteredList)
 } else {
-    console.log(filteredList)
+    console.log("Deletion unsuccessful:", res.data.message)
 }
     })
 }

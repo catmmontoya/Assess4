@@ -39,19 +39,19 @@ return (
         <ItemCodeCell
         value={item}
         isEditing={editMode}
-        onChangeValue={setItem} />
+        onValueChange={setItem} />
         <DescriptionCell 
         value={description}
         isEditing={editMode}
-        onChangeValue={setDescription} />
+        onValueChange={setDescription} />
         <QuantityCell
         value={quantity}
         isEditing={editMode}
-        onChangeValue={setQuantity} />
+        onValueChange={setQuantity} />
         <NotesCell
         value={notes}
         isEditing={editMode}
-        onChangeValue={setNotes} />
+        onValueChange={setNotes} />
         </tr>
 )
 
